@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/bottom">
+
+    <!--此处是下面三个按钮的布局-->
+    <LinearLayout
+        android:layout_gravity="bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="110dp"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        >
+        <LinearLayout
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:id="@+id/ll_main">
+            <FrameLayout android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal">
+                <ImageView android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@mipmap/ic_main_normal"
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/imageView1"
+                    />
+                <TextView android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_gravity="right"
+                    android:gravity="center"
+                    android:id="@+id/tv_unread_message_count"
+                    android:textColor="#FFFFFF"
+                    android:text="11"
+                    android:textSize="15dp"
+                    />
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/button1"
+                android:textColor="@drawable/bg_btn_main_bottom_selected"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:background="#ffffff"
+                android:text="首页"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:id="@+id/ll_more_type">
+            <FrameLayout android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal">
+                <ImageView android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@mipmap/ic_type_normal"
+                    android:id="@+id/imageView2"
+                    android:layout_marginTop="5dp"
+                    />
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/button2"
+                android:textColor="@drawable/bg_btn_main_bottom_selected"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1dip"
+                android:layout_marginRight="1dip"
+                android:textSize="15sp"
+                android:background="#ffffff"
+                android:text="分类"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:id="@+id/ll_explore">
+            <FrameLayout android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                >
+                <ImageView android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@mipmap/ic_more_normal"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/imageView3"
+                    android:layout_marginTop="5dp"
+                    />
+            </FrameLayout>
+            <Button
+                android:id="@+id/button3"
+                android:textColor="@drawable/bg_btn_main_bottom_selected"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1dip"
+                android:layout_marginRight="1dip"
+                android:textSize="15sp"
+                android:background="#ffffff"
+                android:text="更多"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
