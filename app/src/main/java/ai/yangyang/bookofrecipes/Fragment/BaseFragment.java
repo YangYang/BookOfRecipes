@@ -1,4 +1,4 @@
-package ai.yangyang.bookofrecipes;
+package ai.yangyang.bookofrecipes.Fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
