@@ -3,7 +3,12 @@ package ai.yangyang.bookofrecipes.Activity;
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.widget.NestedScrollView;
 import android.text.Editable;
 import android.text.InputType;
@@ -23,17 +28,27 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonParser;
+import com.google.gson.reflect.TypeToken;
 import com.vondear.rxtool.RxAnimationTool;
 import com.vondear.rxtool.RxBarTool;
 import com.vondear.rxtool.RxKeyboardTool;
-import com.vondear.rxtool.RxTool;
+import com.vondear.rxtool.view.RxToast;
 import com.vondear.rxui.activity.AndroidBug5497Workaround;
 
+
+import org.xutils.common.Callback;
+import org.xutils.http.RequestParams;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
+import org.xutils.x;
 
+import ai.yangyang.bookofrecipes.Bean.LoginResBean;
 import ai.yangyang.bookofrecipes.R;
+import ai.yangyang.bookofrecipes.Util.MyParamsBuilder;
 
 @ContentView(R.layout.activity_login)
 public class LoginActivity extends BaseActivity {
@@ -70,14 +85,32 @@ public class LoginActivity extends BaseActivity {
     private float scale = 0.6f; //logo缩放比例
     private int height = 0;
 
+    @SuppressLint("HandlerLeak")
+    private Handler mhandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            switch(msg.what){
+                case 0:
+
+                    break;
+
+                case 1:
+
+                    break;
+            }
+        }
+    };
+
+    private Gson gson = new Gson();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        RxTool.init(this);
         RxBarTool.setTransparentStatusBar(this);//状态栏透明化
         RxBarTool.StatusBarLightMode(mContext);
 //        ButterKnife.bind(this);
 
+        x.view().inject(this);
         if (isFullScreen(this)) {
             AndroidBug5497Workaround.assistActivity(this);
         }
@@ -186,6 +219,58 @@ public class LoginActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 RxKeyboardTool.hideSoftInput(mContext);
+                if(checkParam()){
+                    login(mEtMobile.getText().toString(), mEtPassword.getText().toString());
+                } else {
+                    RxToast.error("请填写用户名和密码后点击登录！");
+                }
+
+            }
+        });
+    }
+
+    private boolean checkParam() {
+        if(TextUtils.isEmpty(mEtMobile.getText()) || TextUtils.isEmpty(mEtPassword.getText())){
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    private void login(final String username, final String password){
+        //构造请求参数
+        RequestParams requestParams = new MyParamsBuilder("/PrivateFood/api",false)
+                .addParameter("username",username)
+                .addParameter("password",password)
+                .addParameter("flag","login")
+                .builder();
+
+        x.http().post(requestParams, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                //GSON直接解析成对象
+                LoginResBean loginResBean = new Gson().fromJson(result,LoginResBean.class);
+                if(loginResBean.getResult().equals("1")){
+                    RxToast.success("登录成功");
+                    goToMain();
+                } else {
+                    RxToast.error("登录失败");
+                }
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
             }
         });
     }
@@ -218,4 +303,10 @@ public class LoginActivity extends BaseActivity {
                 break;
         }
     }
+
+    private void goToMain(){
+        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+        startActivity(intent);
+    }
+
 }
