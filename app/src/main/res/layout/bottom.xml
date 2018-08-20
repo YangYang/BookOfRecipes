@@ -8,68 +8,75 @@
     <!--此处是下面三个按钮的布局-->
     <LinearLayout
         android:layout_gravity="bottom"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:orientation="horizontal"
         android:layout_weight="1"
         >
         <LinearLayout
-            android:layout_height="fill_parent"
-            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
             android:id="@+id/ll_main">
             <FrameLayout android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center_horizontal">
-                <ImageView android:layout_width="25dp"
-                    android:layout_height="25dp"
+                <ImageView android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:background="@mipmap/ic_main_normal"
                     android:layout_marginTop="5dp"
                     android:id="@+id/image_main"
-                />
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="5dp"
+
+                    />
             </FrameLayout>
 
-            <Button
-                android:id="@+id/btn_main"
+            <TextView
+                android:layout_gravity="center"
+                android:id="@+id/text_main"
                 android:textColor="@color/gray"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="15sp"
+                android:textSize="10sp"
                 android:background="#00000000"
                 android:text="首页"/>
         </LinearLayout>
         <LinearLayout
-            android:layout_height="fill_parent"
-            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
             android:id="@+id/ll_more_type">
+            
             <FrameLayout android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center_horizontal">
-                <ImageView android:layout_width="25dp"
-                    android:layout_height="25dp"
+                <ImageView android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:background="@mipmap/ic_type_normal"
                     android:id="@+id/image_type"
                     android:layout_marginTop="5dp"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="5dp"
+
                     />
             </FrameLayout>
 
-            <Button
-                android:id="@+id/btn_type"
+            <TextView
+                android:layout_gravity="center"
+                android:id="@+id/text_type"
                 android:textColor="@color/gray"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="1dip"
-                android:layout_marginRight="1dip"
-                android:textSize="15sp"
+                android:textSize="10sp"
                 android:background="#00000000"
                 android:text="分类"/>
         </LinearLayout>
         <LinearLayout
-            android:layout_height="fill_parent"
-            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
             android:id="@+id/ll_explore">
@@ -77,22 +84,22 @@
                 android:layout_height="30dp"
                 android:layout_gravity="center_horizontal"
                 >
-                <ImageView android:layout_width="25dp"
-                    android:layout_height="25dp"
+                <ImageView android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:background="@mipmap/ic_more_normal"
                     android:layout_gravity="center_horizontal"
                     android:id="@+id/image_more"
                     android:layout_marginTop="5dp"
+                    android:scaleType="fitXY"
                     />
             </FrameLayout>
-            <Button
-                android:id="@+id/btn_more"
+            <TextView
+                android:layout_gravity="center"
+                android:id="@+id/text_more"
                 android:textColor="@color/gray"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="1dip"
-                android:layout_marginRight="1dip"
-                android:textSize="15sp"
+                android:textSize="10sp"
                 android:background="#00000000"
                 android:text="更多"/>
         </LinearLayout>

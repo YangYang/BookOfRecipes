@@ -11,7 +11,9 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import org.w3c.dom.Text;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
@@ -24,12 +26,12 @@ import ai.yangyang.bookofrecipes.R;
 @ContentView(R.layout.activity_main)
 public class MainActivity extends BaseActivity {
 
-    @ViewInject(R.id.btn_main)
-    private Button btnMain;
-    @ViewInject(R.id.btn_more)
-    private Button btnMore;
-    @ViewInject(R.id.btn_type)
-    private Button btnType;
+    @ViewInject(R.id.text_main)
+    private TextView textMain;
+    @ViewInject(R.id.text_more)
+    private TextView textMore;
+    @ViewInject(R.id.text_type)
+    private TextView textType;
 
     @ViewInject(R.id.image_main)
     private ImageView imageMain;
@@ -44,16 +46,16 @@ public class MainActivity extends BaseActivity {
 
 
 
-    @Event({R.id.btn_main,R.id.btn_type,R.id.btn_more,R.id.image_main,R.id.image_type,R.id.image_more})
+    @Event({R.id.text_main,R.id.text_type,R.id.text_more,R.id.image_main,R.id.image_type,R.id.image_more})
     private void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.btn_main:
+            case R.id.text_main:
                 changeMainBackground();
                 break;
-            case R.id.btn_type:
+            case R.id.text_type:
                 changeTypeBackground();
                 break;
-            case R.id.btn_more:
+            case R.id.text_more:
                 changeMoreBackground();
                 break;
             case R.id.image_main:
@@ -73,9 +75,9 @@ public class MainActivity extends BaseActivity {
         imageMain.setImageResource(R.mipmap.ic_main_press);
         imageType.setImageResource(R.mipmap.ic_type_normal);
         imageMore.setImageResource(R.mipmap.ic_more_normal);
-        btnMain.setTextColor(Color.rgb(255,173,0));
-        btnType.setTextColor(Color.rgb(128,128,128));
-        btnMore.setTextColor(Color.rgb(128,128,128));
+        textMain.setTextColor(Color.rgb(255,173,0));
+        textType.setTextColor(Color.rgb(128,128,128));
+        textMore.setTextColor(Color.rgb(128,128,128));
 
 
         FragmentManager fm = getFragmentManager();
@@ -93,9 +95,9 @@ public class MainActivity extends BaseActivity {
         imageMain.setImageResource(R.mipmap.ic_main_normal);
         imageType.setImageResource(R.mipmap.ic_type_press);
         imageMore.setImageResource(R.mipmap.ic_more_normal);
-        btnMain.setTextColor(Color.rgb(128,128,128));
-        btnType.setTextColor(Color.rgb(255,173,0));
-        btnMore.setTextColor(Color.rgb(128,128,128));
+        textMain.setTextColor(Color.rgb(128,128,128));
+        textType.setTextColor(Color.rgb(255,173,0));
+        textMore.setTextColor(Color.rgb(128,128,128));
         FragmentManager fm = getFragmentManager();
         // 开启Fragment事务
         FragmentTransaction transaction = fm.beginTransaction();
@@ -110,9 +112,9 @@ public class MainActivity extends BaseActivity {
         imageMain.setImageResource(R.mipmap.ic_main_normal);
         imageType.setImageResource(R.mipmap.ic_type_normal);
         imageMore.setImageResource(R.mipmap.ic_more_press);
-        btnMain.setTextColor(Color.rgb(128,128,128));
-        btnType.setTextColor(Color.rgb(128,128,128));
-        btnMore.setTextColor(Color.rgb(255,173,0));
+        textMain.setTextColor(Color.rgb(128,128,128));
+        textType.setTextColor(Color.rgb(128,128,128));
+        textMore.setTextColor(Color.rgb(255,173,0));
         FragmentManager fm = getFragmentManager();
         // 开启Fragment事务
         FragmentTransaction transaction = fm.beginTransaction();
@@ -133,18 +135,20 @@ public class MainActivity extends BaseActivity {
         imageMain.setImageResource(R.mipmap.ic_main_press);
         imageType.setImageResource(R.mipmap.ic_type_normal);
         imageMore.setImageResource(R.mipmap.ic_more_normal);
-        btnMain.setTextColor(Color.rgb(255,173,0));
-        btnType.setTextColor(Color.rgb(128,128,128));
-        btnMore.setTextColor(Color.rgb(128,128,128));
+        textMain.setTextColor(Color.rgb(255,173,0));
+        textType.setTextColor(Color.rgb(128,128,128));
+        textMore.setTextColor(Color.rgb(128,128,128));
 
         FragmentManager fm = getFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
 
 
         transaction.replace(R.id.fragment_main,mainFragment);
-        transaction.replace(R.id.fragment_more,moreFragment);
         transaction.replace(R.id.fragment_type,typeFragment);
+        transaction.replace(R.id.fragment_more,moreFragment);
 
+
+//        transaction.hide(mainFragment);
         transaction.hide(moreFragment);
         transaction.hide(typeFragment);
 
