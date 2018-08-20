@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_gravity="bottom"
         android:layout_width="fill_parent"
-        android:layout_height="110dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_weight="1"
         >
@@ -26,28 +26,17 @@
                     android:layout_height="25dp"
                     android:background="@mipmap/ic_main_normal"
                     android:layout_marginTop="5dp"
-                    android:id="@+id/imageView1"
-                    />
-                <TextView android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginRight="0dp"
-                    android:layout_gravity="right"
-                    android:gravity="center"
-                    android:id="@+id/tv_unread_message_count"
-                    android:textColor="#FFFFFF"
-                    android:text="11"
-                    android:textSize="15dp"
-                    />
+                    android:id="@+id/image_main"
+                />
             </FrameLayout>
 
             <Button
-                android:id="@+id/button1"
-                android:textColor="@drawable/bg_btn_main_bottom_selected"
+                android:id="@+id/btn_main"
+                android:textColor="@color/gray"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
-                android:background="#ffffff"
+                android:background="#00000000"
                 android:text="首页"/>
         </LinearLayout>
         <LinearLayout
@@ -62,20 +51,20 @@
                 <ImageView android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:background="@mipmap/ic_type_normal"
-                    android:id="@+id/imageView2"
+                    android:id="@+id/image_type"
                     android:layout_marginTop="5dp"
                     />
             </FrameLayout>
 
             <Button
-                android:id="@+id/button2"
-                android:textColor="@drawable/bg_btn_main_bottom_selected"
+                android:id="@+id/btn_type"
+                android:textColor="@color/gray"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="1dip"
                 android:layout_marginRight="1dip"
                 android:textSize="15sp"
-                android:background="#ffffff"
+                android:background="#00000000"
                 android:text="分类"/>
         </LinearLayout>
         <LinearLayout
@@ -92,19 +81,19 @@
                     android:layout_height="25dp"
                     android:background="@mipmap/ic_more_normal"
                     android:layout_gravity="center_horizontal"
-                    android:id="@+id/imageView3"
+                    android:id="@+id/image_more"
                     android:layout_marginTop="5dp"
                     />
             </FrameLayout>
             <Button
-                android:id="@+id/button3"
-                android:textColor="@drawable/bg_btn_main_bottom_selected"
+                android:id="@+id/btn_more"
+                android:textColor="@color/gray"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="1dip"
                 android:layout_marginRight="1dip"
                 android:textSize="15sp"
-                android:background="#ffffff"
+                android:background="#00000000"
                 android:text="更多"/>
         </LinearLayout>
     </LinearLayout>
