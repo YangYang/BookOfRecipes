@@ -1,14 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
     <include
         android:id="@+id/title"
         layout="@layout/fragment_main_title"/>
-    <ScrollView
+    <FrameLayout
         android:layout_height="match_parent"
         android:layout_width="match_parent">
+        <!--scrollview的置顶按钮-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:id="@+id/image_btn_to_top"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="60dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/ic_to_top"
+                />
+        </RelativeLayout>
+
+        <ai.yangyang.bookofrecipes.Util.GoTopScrollView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+            <!--本周流行&热门排行榜-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginRight="5dp"
+                        android:alpha="0.7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/popular_recipes"
+                        android:scaleType="fitXY"
+                        />
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="本周流行食谱"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="20sp"
+                        />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="18dp"
+                        android:alpha="0.7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/popular_rank"
+                        android:scaleType="fitXY"
+                        />
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="热门排行榜"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="20sp"
+
+                        />
+                </FrameLayout>
+            </LinearLayout>
 
 
-    </ScrollView>
+        </ai.yangyang.bookofrecipes.Util.GoTopScrollView>
+
+    </FrameLayout>
+
 </LinearLayout>
