@@ -1,28 +1,23 @@
 package ai.yangyang.bookofrecipes.Fragment;
 
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.xutils.x;
+import org.xutils.view.annotation.ContentView;
 
-public class BaseFragment extends Fragment {
+import ai.yangyang.bookofrecipes.R;
 
-    private boolean injected = false;
-
+@ContentView(R.layout.fragment_main)
+public class MainFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        injected = true;
-        return x.view().inject(this, inflater, container);
+        return super.onCreateView(inflater, container, savedInstanceState);
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        if (!injected) {
-            x.view().inject(this, this.getView());
-        }
     }
 }

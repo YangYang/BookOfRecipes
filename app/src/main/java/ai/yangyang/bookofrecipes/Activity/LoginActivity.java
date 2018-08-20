@@ -226,7 +226,6 @@ public class LoginActivity extends BaseActivity {
 //                } else {
 //                    RxToast.error("请填写用户名和密码后点击登录！");
 //                }
-
             }
         });
     }
