@@ -2,8 +2,9 @@ package ai.yangyang.bookofrecipes.Activity;
 
 import android.annotation.SuppressLint;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.InputType;
@@ -80,7 +81,7 @@ public class MainActivity extends BaseActivity {
         textMore.setTextColor(Color.rgb(128,128,128));
 
 
-        FragmentManager fm = getFragmentManager();
+        FragmentManager fm = getSupportFragmentManager();
         // 开启Fragment事务
         FragmentTransaction transaction = fm.beginTransaction();
         transaction.show(mainFragment);
@@ -98,7 +99,7 @@ public class MainActivity extends BaseActivity {
         textMain.setTextColor(Color.rgb(128,128,128));
         textType.setTextColor(Color.rgb(255,173,0));
         textMore.setTextColor(Color.rgb(128,128,128));
-        FragmentManager fm = getFragmentManager();
+        FragmentManager fm = getSupportFragmentManager();
         // 开启Fragment事务
         FragmentTransaction transaction = fm.beginTransaction();
         transaction.hide(mainFragment);
@@ -115,7 +116,7 @@ public class MainActivity extends BaseActivity {
         textMain.setTextColor(Color.rgb(128,128,128));
         textType.setTextColor(Color.rgb(128,128,128));
         textMore.setTextColor(Color.rgb(255,173,0));
-        FragmentManager fm = getFragmentManager();
+        FragmentManager fm = getSupportFragmentManager();
         // 开启Fragment事务
         FragmentTransaction transaction = fm.beginTransaction();
         transaction.hide(mainFragment);
@@ -139,7 +140,7 @@ public class MainActivity extends BaseActivity {
         textType.setTextColor(Color.rgb(128,128,128));
         textMore.setTextColor(Color.rgb(128,128,128));
 
-        FragmentManager fm = getFragmentManager();
+        FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
 
 

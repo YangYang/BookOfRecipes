@@ -2,6 +2,7 @@ package ai.yangyang.bookofrecipes.Fragment;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -65,6 +66,9 @@ public class MainFragment extends BaseFragment {
 
     @ViewInject(R.id.image_btn_to_top)
     private ImageButton imageBtnToTop;
+
+    @ViewInject(R.id.type_viewpager)
+    private ViewPager viewPager;
 
 
     @Event(R.id.image_btn_to_top)
@@ -213,4 +217,6 @@ public class MainFragment extends BaseFragment {
         initRecipesListItem();
 //        initListView();
     }
+
+
 }
