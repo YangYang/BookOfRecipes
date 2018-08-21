@@ -6,34 +6,32 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
 
+
 import java.util.ArrayList;
 import java.util.List;
-
 import ai.yangyang.bookofrecipes.R;
+
 
 @ContentView(R.layout.fragment_type)
 public class TypeFragment extends BaseFragment {
 
     @ViewInject(R.id.type_viewpager)
     private ViewPager viewPager;
+
     @ViewInject(R.id.type_tabs)
     private TabLayout tabLayout;
-    @ViewInject(R.id)
+
 
     private void initView(){
         tabLayout.addTab(tabLayout.newTab().setText("分类"));
         tabLayout.addTab(tabLayout.newTab().setText("材料"));
-
         tabLayout.setTabTextColors(Color.rgb(128,128,128),Color.rgb(255,173,0));
-
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -59,7 +57,6 @@ public class TypeFragment extends BaseFragment {
             @Override
             public void onPageSelected(int position) {
                 tabLayout.getTabAt(position).select();
-                Log.e("position",position+ " ");
             }
 
             @Override
@@ -107,14 +104,13 @@ public class TypeFragment extends BaseFragment {
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         initView();
-
     }
 }
