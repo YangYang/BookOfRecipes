@@ -26,6 +26,7 @@ public class TypeFragment extends BaseFragment {
     private ViewPager viewPager;
     @ViewInject(R.id.type_tabs)
     private TabLayout tabLayout;
+    @ViewInject(R.id)
 
     private void initView(){
         tabLayout.addTab(tabLayout.newTab().setText("分类"));

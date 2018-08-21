@@ -11,12 +11,14 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:id="@+id/lv_all_type"
             />
         <GridView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="4"
             android:numColumns="3"
+            android:id="@+id/gv_detail_type"
             />
     </LinearLayout>
 </LinearLayout>
