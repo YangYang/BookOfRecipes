@@ -9,5 +9,7 @@
     <color name="colorGray">#808080</color>
     <color name="colorLittleGray">#F3F3F3</color>
     <color name="colorSearch">#F3E8ED</color>
+    <!--153,153,153-->
+    <color name="colorLittleDeepGray">#999999</color>
 </resources>
 

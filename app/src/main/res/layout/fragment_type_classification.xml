@@ -21,6 +21,7 @@
             android:layout_weight="4"
             android:numColumns="3"
             android:id="@+id/gv_detail_type"
+            android:layout_gravity="center"
             />
     </LinearLayout>
 </LinearLayout>
