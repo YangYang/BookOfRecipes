@@ -19,7 +19,6 @@ import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
-import ai.yangyang.bookofrecipes.Adapter.SearchResAdapter;
 import ai.yangyang.bookofrecipes.Bean.SearchBean;
 import ai.yangyang.bookofrecipes.R;
 import ai.yangyang.bookofrecipes.Util.MyParamsBuilder;
@@ -28,7 +27,7 @@ import ai.yangyang.bookofrecipes.Util.MyParamsBuilder;
 public class SearchActivity extends BaseActivity{
     @ViewInject(R.id.floating_search_view)
     private FloatingSearchView floatingSearchView;
-    private SearchResAdapter searchResAdapter;
+
     @ViewInject(R.id.lv_search_res)
     private ListView lvSearchRes;
 

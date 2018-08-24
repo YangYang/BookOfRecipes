@@ -219,13 +219,11 @@ public class LoginActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 RxKeyboardTool.hideSoftInput(mContext);
-                goToMain();
-                //TODO 完成后取消注释
-//                if(checkParam()){
-//                    login(mEtMobile.getText().toString(), mEtPassword.getText().toString());
-//                } else {
-//                    RxToast.error("请填写用户名和密码后点击登录！");
-//                }
+                if(checkParam()){
+                    login(mEtMobile.getText().toString(), mEtPassword.getText().toString());
+                } else {
+                    RxToast.error("请填写用户名和密码后点击登录！");
+                }
             }
         });
     }

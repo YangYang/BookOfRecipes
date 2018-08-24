@@ -43,7 +43,6 @@ import java.util.List;
 
 import ai.yangyang.bookofrecipes.Activity.MainActivity;
 import ai.yangyang.bookofrecipes.Activity.SearchActivity;
-import ai.yangyang.bookofrecipes.Adapter.MenusAdapter;
 import ai.yangyang.bookofrecipes.Bean.LoginResBean;
 import ai.yangyang.bookofrecipes.Bean.Menus;
 import ai.yangyang.bookofrecipes.Bean.MenusBean;
