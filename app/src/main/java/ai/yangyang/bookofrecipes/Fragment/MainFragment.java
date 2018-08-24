@@ -1,6 +1,7 @@
 package ai.yangyang.bookofrecipes.Fragment;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,6 +42,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import ai.yangyang.bookofrecipes.Activity.MainActivity;
+import ai.yangyang.bookofrecipes.Activity.SearchActivity;
 import ai.yangyang.bookofrecipes.Adapter.MenusAdapter;
 import ai.yangyang.bookofrecipes.Bean.LoginResBean;
 import ai.yangyang.bookofrecipes.Bean.Menus;
@@ -60,26 +63,37 @@ public class MainFragment extends BaseFragment {
 
     @ViewInject(R.id.ll_recipes_list)
     private LinearLayout llRecipesList;
-
     @ViewInject(R.id.scroll_view)
     private ScrollView scrollView;
-
     @ViewInject(R.id.image_btn_to_top)
     private ImageButton imageBtnToTop;
-
     @ViewInject(R.id.type_viewpager)
     private ViewPager viewPager;
+    @ViewInject(R.id.include_search_title)
+    private View includeSearchTitle;
 
 
-    @Event(R.id.image_btn_to_top)
+
+
+    @Event({R.id.image_btn_to_top,R.id.include_search_title})
     private void onClick(View view){
-        scrollView.scrollTo(0,0);
-        imageBtnToTop.setVisibility(Button.INVISIBLE);
+        switch (view.getId())
+        {
+            case R.id.image_btn_to_top:
+                scrollView.scrollTo(0,0);
+                imageBtnToTop.setVisibility(Button.INVISIBLE);
+                break;
+            case R.id.include_search_title:
+                Intent intent = new Intent(getActivity(),SearchActivity.class);
+                startActivity(intent);
+                break;
+        }
     }
 
 
     @SuppressLint("ClickableViewAccessibility")
     private void initView(){
+
         HashMap<String,String> urlMaps = new HashMap<>();
         urlMaps.put("干烧大虾", "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2756680426,1440361842&fm=27&gp=0.jpg");
         urlMaps.put("特色美食", "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1674366350,957705626&fm=27&gp=0.jpg");
@@ -209,6 +223,7 @@ public class MainFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         initView();
         initRecipesListItem();
 //        initListView();

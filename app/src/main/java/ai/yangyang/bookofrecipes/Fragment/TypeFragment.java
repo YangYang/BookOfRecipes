@@ -1,5 +1,6 @@
 package ai.yangyang.bookofrecipes.Fragment;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -10,11 +11,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 
 
 import java.util.ArrayList;
 import java.util.List;
+
+import ai.yangyang.bookofrecipes.Activity.SearchActivity;
 import ai.yangyang.bookofrecipes.R;
 
 
@@ -23,9 +27,20 @@ public class TypeFragment extends BaseFragment {
 
     @ViewInject(R.id.type_viewpager)
     private ViewPager viewPager;
-
     @ViewInject(R.id.type_tabs)
     private TabLayout tabLayout;
+    @ViewInject(R.id.include_search_title)
+    private View includeSearchTitle;
+
+    @Event(R.id.include_search_title)
+    private void onClick(View view){
+        switch (view.getId()){
+            case R.id.include_search_title:
+                Intent intent = new Intent(getActivity(),SearchActivity.class);
+                startActivity(intent);
+                break;
+        }
+    }
 
 
     private void initView(){

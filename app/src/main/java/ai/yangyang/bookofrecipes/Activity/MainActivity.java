@@ -3,6 +3,7 @@ package ai.yangyang.bookofrecipes.Activity;
 import android.annotation.SuppressLint;
 
 
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.graphics.Color;
@@ -12,6 +13,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -40,6 +42,7 @@ public class MainActivity extends BaseActivity {
     private ImageView imageType;
     @ViewInject(R.id.image_more)
     private ImageView imageMore;
+
 
     private MainFragment mainFragment;
     private MoreFragment moreFragment;

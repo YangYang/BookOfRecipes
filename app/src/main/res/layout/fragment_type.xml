@@ -21,7 +21,7 @@
 
     </android.support.design.widget.AppBarLayout>
     <include
-        android:id="@+id/title"
+        android:id="@+id/include_search_title"
         layout="@layout/fragment_main_title"/>
 
     <android.support.v4.view.ViewPager
